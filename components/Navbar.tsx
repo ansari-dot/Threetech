@@ -23,10 +23,10 @@ const Navbar: React.FC = () => {
         <div className="flex items-center gap-12 -ml-4 md:ml-16 relative">
           {/* Neon blue glow behind logo */}
           <div className="absolute inset-0 -z-10 flex items-center justify-center">
-            <div className="w-16 h-16 md:w-24 md:h-24 bg-blue-500/30 rounded-full blur-2xl animate-pulse"></div>
-            <div className="absolute w-20 h-20 md:w-32 md:h-32 bg-cyan-400/20 rounded-full blur-3xl"></div>
+            <div className="w-20 h-20 md:w-24 md:h-24 bg-blue-500/30 rounded-full blur-2xl animate-pulse"></div>
+            <div className="absolute w-24 h-24 md:w-32 md:h-32 bg-cyan-400/20 rounded-full blur-3xl"></div>
           </div>
-          <img src="/assets/logo.png" alt="3novator" className="h-12 sm:h-16 md:h-20 w-auto relative z-10 drop-shadow-[0_0_15px_rgba(0,102,255,0.5)] pl-4 md:pl-0" />
+          <img src="/assets/logo.png" alt="3novator" className="h-20 sm:h-24 md:h-20 w-auto relative z-10 drop-shadow-[0_0_15px_rgba(0,102,255,0.5)] pl-4 md:pl-0" />
         </div>
         
         {/* Desktop Navigation */}

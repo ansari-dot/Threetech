@@ -20,13 +20,13 @@ const Navbar: React.FC = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-black/90 border-b border-cyan-500/30 backdrop-blur-xl py-1' : 'bg-transparent py-3'}`}>
       <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
-        <div className="flex items-center gap-12 ml-16 relative">
+        <div className="flex items-center gap-12 -ml-4 md:ml-16 relative">
           {/* Neon blue glow behind logo */}
           <div className="absolute inset-0 -z-10 flex items-center justify-center">
-            <div className="w-24 h-24 bg-blue-500/30 rounded-full blur-2xl animate-pulse"></div>
-            <div className="absolute w-32 h-32 bg-cyan-400/20 rounded-full blur-3xl"></div>
+            <div className="w-16 h-16 md:w-24 md:h-24 bg-blue-500/30 rounded-full blur-2xl animate-pulse"></div>
+            <div className="absolute w-20 h-20 md:w-32 md:h-32 bg-cyan-400/20 rounded-full blur-3xl"></div>
           </div>
-          <img src="/assets/logo.png" alt="3novator" className="h-20 w-auto relative z-10 drop-shadow-[0_0_15px_rgba(0,102,255,0.5)]" />
+          <img src="/assets/logo.png" alt="3novator" className="h-12 sm:h-16 md:h-20 w-auto relative z-10 drop-shadow-[0_0_15px_rgba(0,102,255,0.5)] pl-4 md:pl-0" />
         </div>
         
         {/* Desktop Navigation */}

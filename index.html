@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3novator | Digital Excellence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --neon-cyan: #00f2ff;
+        --neon-blue: #0066ff;
+        --bg-black: #000308;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-black);
+        color: #e0f2fe;
+        overflow-x: hidden;
+      }
+      .font-neon { font-family: 'Orbitron', sans-serif; }
+      
+      /* Cyber Grid Overlay */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: 
+          linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+        background-size: 50px 50px;
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      /* Scanline Effect */
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+        background-size: 100% 4px, 3px 100%;
+        z-index: 100;
+        pointer-events: none;
+        opacity: 0.1;
+      }
+
+      .neon-text {
+        text-shadow: 0 0 8px var(--neon-cyan), 0 0 15px rgba(0, 242, 255, 0.3);
+      }
+      
+      .neon-border {
+        border: 1px solid rgba(0, 242, 255, 0.3);
+        box-shadow: 0 0 15px rgba(0, 242, 255, 0.1), inset 0 0 5px rgba(0, 242, 255, 0.05);
+      }
+
+      .hud-corner {
+        position: relative;
+      }
+      .hud-corner::before, .hud-corner::after {
+        content: "";
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        border-color: var(--neon-cyan);
+        border-style: solid;
+        pointer-events: none;
+        opacity: 0.6;
+      }
+      .hud-corner::before { top: -2px; left: -2px; border-width: 2px 0 0 2px; }
+      .hud-corner::after { bottom: -2px; right: -2px; border-width: 0 2px 2px 0; }
+
+      @keyframes pulse-neon {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.7; }
+      }
+      .animate-pulse-neon {
+        animation: pulse-neon 2s ease-in-out infinite;
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar { width: 5px; }
+      ::-webkit-scrollbar-track { background: var(--bg-black); }
+      ::-webkit-scrollbar-thumb { background: var(--neon-blue); box-shadow: 0 0 10px var(--neon-cyan); }
+
+      /* Mobile-specific optimizations */
+      @media (max-width: 640px) {
+        .cyber-grid-overlay {
+          background-size: 25px 25px;
+        }
+        
+        .scanline-effect {
+          background-size: 100% 2px, 2px 100%;
+        }
+        
+        .hud-corner::before, .hud-corner::after {
+          width: 10px;
+          height: 10px;
+        }
+        
+        .neon-text {
+          text-shadow: 0 0 4px var(--neon-cyan), 0 0 8px rgba(0, 242, 255, 0.2);
+        }
+      }
+
+      /* Touch-friendly hover states */
+      @media (hover: none) {
+        .group:hover .group-hover\:text-cyan-400 {
+          color: inherit;
+        }
+        
+        .group:active .group-hover\:text-cyan-400 {
+          color: rgb(34 211 238);
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

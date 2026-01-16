@@ -304,11 +304,11 @@ const AboutPage: React.FC = () => {
               MEET OUR <span className="text-cyan-400">TEAM</span>
             </motion.h2>
           </motion.div>
-          <div className="flex justify-center gap-6 lg:gap-8 overflow-x-auto pb-4 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
             {team.map((member, idx) => (
               <motion.div 
                 key={idx} 
-                className="bg-cyan-950/10 border border-cyan-500/20 rounded-lg p-4 sm:p-6 hover:border-cyan-400 transition-all flex-shrink-0 w-80"
+                className="bg-cyan-950/10 border border-cyan-500/20 rounded-lg p-4 sm:p-6 hover:border-cyan-400 transition-all w-full"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: idx * 0.2 + 0.3, ease: "easeOut" }}

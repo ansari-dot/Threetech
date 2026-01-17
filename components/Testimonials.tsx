@@ -13,13 +13,13 @@ const Testimonials: React.FC = () => {
     {
       name: "Mason",
       quote: "Their SEO services helped us rank on the first page of Google. Our traffic increased by 300% in just 3 months!",
-      date: "November 5, 2026",
+      date: "November 5, 2024",
       img: "https://i.pravatar.cc/150?u=mason"
     },
     {
       name: "Jonah",
       quote: "3novator built our AI-powered SaaS platform. The quality of work and attention to detail is remarkable.",
-      date: "January 5, 2026",
+      date: "January 5, 2025",
       img: "https://i.pravatar.cc/150?u=jonah"
     }
   ];

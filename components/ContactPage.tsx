@@ -32,7 +32,7 @@ const ContactPage: React.FC = () => {
         </svg>
       ),
       title: "Phone",
-      content: "+92 348 9164980",
+      content: "+92 348 9164985",
       description: "Mon-Fri from 8am to 12am"
     },
     {

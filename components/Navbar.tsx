@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-
+import logo from '../assets/services/logo1.png'
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
             <div className="w-20 h-20 md:w-24 md:h-24 bg-blue-500/30 rounded-full blur-2xl animate-pulse"></div>
             <div className="absolute w-24 h-24 md:w-32 md:h-32 bg-cyan-400/20 rounded-full blur-3xl"></div>
           </div>
-          <img src="/assets/logo.png" alt="3novator" className="h-20 sm:h-24 md:h-20 w-auto relative z-10 drop-shadow-[0_0_15px_rgba(0,102,255,0.5)] pl-4 md:pl-0" />
+          <img src={logo} alt="3novator" className="h-20 sm:h-24 md:h-20 w-auto relative z-10 drop-shadow-[0_0_15px_rgba(0,102,255,0.5)] pl-4 md:pl-0" />
         </div>
         
         {/* Desktop Navigation */}

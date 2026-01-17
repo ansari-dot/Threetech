@@ -108,7 +108,7 @@ const ServicesPage: React.FC = () => {
       <Navbar />
       {/* Hero Section */}
       <motion.section 
-        className="relative pt-24 sm:pt-28 md:pt-32 pb-16 px-4 sm:px-6 min-h-screen flex items-center overflow-hidden"
+        className="relative pt-36 sm:pt-28 md:pt-32 pb-16 px-4 sm:px-6 min-h-[70vh] sm:min-h-screen flex items-center overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -155,93 +155,51 @@ const ServicesPage: React.FC = () => {
       {/* Services Grid */}
       <motion.section 
         className="py-20 lg:py-32 bg-black relative"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.3 }}
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 1 }}
       >
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(0,242,255,0.05),transparent_70%)]"></div>
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {services.map((service, idx) => (
               <motion.div 
                 key={service.id} 
-                className="bg-cyan-950/10 border border-cyan-500/20 rounded-lg p-4 sm:p-6 lg:p-8 hover:border-cyan-400 transition-all group"
-                initial={{ opacity: 0, y: 50, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.6, delay: idx * 0.1, ease: "easeOut" }}
-                viewport={{ once: true, amount: 0.3 }}
+                className="bg-cyan-950/10 border border-cyan-500/20 rounded-lg p-6 sm:p-6 lg:p-8 hover:border-cyan-400 transition-all group w-full"
+                initial={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 whileHover={{ y: -10, scale: 1.02 }}
               >
-                <motion.div 
-                  className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-cyan-400/20 rounded-lg flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-cyan-400/30 transition-all"
-                  initial={{ opacity: 0, scale: 0.8, rotate: -180 }}
-                  whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                  transition={{ duration: 0.6, delay: idx * 0.1 + 0.2, ease: "easeOut" }}
-                  viewport={{ once: true, amount: 0.3 }}
-                >
+                <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-cyan-400/20 rounded-lg flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-cyan-400/30 transition-all">
                   <div className="text-cyan-400 w-6 h-6 sm:w-8 sm:h-8">{service.icon}</div>
-                </motion.div>
-                <motion.h3 
-                  className="text-lg sm:text-xl font-neon font-bold text-white mb-3 sm:mb-4"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: idx * 0.1 + 0.3, ease: "easeOut" }}
-                  viewport={{ once: true, amount: 0.3 }}
-                >
+                </div>
+                <h3 className="text-lg sm:text-xl font-neon font-bold text-white mb-3 sm:mb-4">
                   {service.title}
-                </motion.h3>
-                <motion.p 
-                  className="text-sm sm:text-base text-cyan-100/60 mb-4 sm:mb-6"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: idx * 0.1 + 0.4, ease: "easeOut" }}
-                  viewport={{ once: true, amount: 0.3 }}
-                >
+                </h3>
+                <p className="text-sm sm:text-base text-cyan-100/60 mb-4 sm:mb-6">
                   {service.description}
-                </motion.p>
-                <motion.div 
-                  className="space-y-2"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: idx * 0.1 + 0.5, ease: "easeOut" }}
-                  viewport={{ once: true, amount: 0.3 }}
-                >
+                </p>
+                <div className="space-y-2">
                   {service.features.map((feature, featureIdx) => (
-                    <motion.div 
+                    <div 
                       key={featureIdx} 
                       className="flex items-center gap-2 text-xs sm:text-sm text-cyan-100/50"
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.4, delay: idx * 0.1 + 0.5 + featureIdx * 0.05, ease: "easeOut" }}
-                      viewport={{ once: true, amount: 0.3 }}
                     >
                       <span className="text-cyan-400">•</span>
                       <span>{feature}</span>
-                    </motion.div>
+                    </div>
                   ))}
-                </motion.div>
-                <motion.div 
-                  className="mt-4 sm:mt-6"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: idx * 0.1 + 0.7, ease: "easeOut" }}
-                  viewport={{ once: true, amount: 0.3 }}
-                >
-                  <motion.a 
+                </div>
+                <div className="mt-4 sm:mt-6">
+                  <a 
                     href={service.link}
                     className="text-[10px] sm:text-xs font-neon font-bold tracking-[0.3em] uppercase text-cyan-400 hover:text-white transition-colors flex items-center gap-2 group/btn"
-                    whileHover={{ scale: 1.05, x: 5 }}
                   >
                     LEARN MORE
-                    <motion.span 
-                      className="group-hover/btn:translate-x-2 transition-transform"
-                      whileHover={{ x: 5 }}
-                    >
+                    <span className="group-hover/btn:translate-x-2 transition-transform">
                       →
-                    </motion.span>
-                  </motion.a>
-                </motion.div>
+                    </span>
+                  </a>
+                </div>
               </motion.div>
             ))}
           </div>

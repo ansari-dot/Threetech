@@ -32,8 +32,8 @@ const ContactPage: React.FC = () => {
         </svg>
       ),
       title: "Phone",
-      content: "+92 300 1234567",
-      description: "Mon-Fri from 8am to 6pm"
+      content: "+92 348 9164980",
+      description: "Mon-Fri from 8am to 12am"
     },
     {
       icon: (
@@ -42,7 +42,7 @@ const ContactPage: React.FC = () => {
         </svg>
       ),
       title: "Email",
-      content: "info@threetech.com",
+      content: "threenovatortech@gmail.com",
       description: "Send us your query anytime"
     },
     {
